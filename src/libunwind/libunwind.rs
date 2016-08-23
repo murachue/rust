@@ -238,7 +238,9 @@ if #[cfg(not(all(target_os = "ios", target_arch = "arm")))] {
                all(target_os = "linux",
                    target_env = "musl",
                    not(target_arch = "x86"),
-                   not(target_arch = "x86_64"))),
+                   not(target_arch = "x86_64"),
+                   not(target_arch = "mips"),
+                   )),
            link(name = "gcc_s"))]
 #[cfg_attr(all(target_os = "linux",
                target_env = "musl",

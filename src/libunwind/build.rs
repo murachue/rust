@@ -16,7 +16,7 @@ fn main() {
     let target = env::var("TARGET").unwrap();
 
     if target.contains("linux") {
-        if target.contains("musl") && !target.contains("mips") {
+        if target.contains("musl") {
             println!("cargo:rustc-link-lib=static=unwind");
         } else if !target.contains("android") {
             println!("cargo:rustc-link-lib=gcc_s");
