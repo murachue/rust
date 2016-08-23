@@ -21,10 +21,12 @@ pub fn target() -> TargetResult {
         target_env: "musl".to_string(),
         target_vendor: "unknown".to_string(),
         options: TargetOptions {
-            cpu: "mips32".to_string(),
-            features: "+mips32,+soft-float".to_string(),
+            cpu: "mips1".to_string(),
+            features: "+soft-float".to_string(),
             max_atomic_width: 32,
-            ..super::linux_base::opts()
+            relocation_model: "static".to_string(), // FIXME this must be in mipsel-unknown-psx-musl!
+            has_elf_tls: false, // FIXME this must be in mipsel-unknown-psx-musl!
+            ..super::linux_musl_base::opts()
         }
     })
 }
