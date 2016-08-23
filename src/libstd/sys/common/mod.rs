@@ -44,7 +44,8 @@ pub mod util;
 pub mod wtf8;
 
 #[cfg(any(not(cargobuild), feature = "backtrace"))]
-#[cfg(any(all(unix, not(any(target_os = "macos", target_os = "ios", target_os = "emscripten"))),
+#[cfg(any(all(unix, not(any(target_os = "macos", target_os = "ios", target_os = "emscripten",
+                            all(target_env = "musl", target_arch = "mips")))),
           all(windows, target_env = "gnu")))]
 pub mod gnu;
 

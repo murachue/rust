@@ -88,4 +88,5 @@ pub use self::tracing::write;
 // tracing impls:
 mod tracing;
 // symbol resolvers:
+#[cfg(not(all(target_env = "musl", target_arch = "mips")))]
 mod printing;

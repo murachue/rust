@@ -44,6 +44,7 @@ pub fn log_enabled() -> bool {
 }
 
 // These output functions should now be used everywhere to ensure consistency.
+#[allow(dead_code)]
 pub fn output(w: &mut Write, idx: isize, addr: *mut libc::c_void,
               s: Option<&[u8]>) -> io::Result<()> {
     write!(w, "  {:2}: {:2$?} - ", idx, addr, HEX_WIDTH)?;
@@ -84,6 +85,7 @@ pub fn output_fileline(w: &mut Write, file: &[u8], line: libc::c_int,
 // Note that this demangler isn't quite as fancy as it could be. We have lots
 // of other information in our symbols like hashes, version, type information,
 // etc. Additionally, this doesn't handle glue symbols at all.
+#[allow(dead_code)]
 pub fn demangle(writer: &mut Write, s: &str) -> io::Result<()> {
     // First validate the symbol. If it doesn't look like anything we're
     // expecting, we just print it literally. Note that we must handle non-rust
