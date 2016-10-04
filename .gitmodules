@@ -1,7 +1,7 @@
 [submodule "src/llvm"]
 	path = src/llvm
-	url = https://github.com/rust-lang/llvm.git
-	branch = master
+	url = https://github.com/murachue/llvm.git
+	branch = 1.12.0-r3000
 [submodule "src/compiler-rt"]
 	path = src/compiler-rt
 	url = https://github.com/rust-lang/compiler-rt.git
@@ -16,4 +16,5 @@
 	url = https://github.com/rust-lang/rust-installer.git
 [submodule "src/liblibc"]
 	path = src/liblibc
-	url = https://github.com/rust-lang/libc.git
+	url = https://github.com/murachue/libc.git
+	branch = 1.12.0-r3000
